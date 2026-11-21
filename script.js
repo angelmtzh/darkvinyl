@@ -251,6 +251,12 @@ function openArtistAlbums(artistOrGenre, artistName) {
     html += "</div></div>";
     dynamicContent.innerHTML = html;
     showSection("dynamic");
+
+    // Detener los videos de Inicio al entrar a un artista destacado
+document.querySelectorAll("video").forEach(video => {
+    video.pause();
+    video.currentTime = 0;
+});
 }
 
 function openAlbumSongs(genreKey, albumName, artistName) {
