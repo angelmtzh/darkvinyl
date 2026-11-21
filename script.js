@@ -4,7 +4,7 @@ const musicDB = {
     pop: {
         name: "Pop", desc: "Melodías modernas y producción estelar", symbol: "⚡",
         artists: [
-            { name: "Billie Eilish", img: "imagenes/l.jpg", featuredImg: "imagenes/l.jpg", albumImages: {"WHEN WE ALL FALL ASLEEP": "imagenes/ab.jpg", "Hit Me Hard And Soft": "imagenes/aab.jpg"}, albums: {
+            { name: "Billie Eilish", img: "imagenes/l.jpg", featuredImg: "imagenes/l.jpg", albumImages: {"WHEN WE ALL FALL ASLEEP": "imagenes/ab.jpg", "HIT ME HARD AND SOFT": "imagenes/aab.jpg"}, albums: {
                 "WHEN WE ALL FALL ASLEEP": ["Bad Guy", "Bury a Friend", "All the Good Girls"],
                 "HIT ME HARD AND SOFT": ["WILDFLOWER", "CHIHIRO", "BIRDS OF A FEATHER"]
             }},
