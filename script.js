@@ -9,7 +9,7 @@ const musicDB = {
                 "HIT ME HARD AND SOFT": ["WILDFLOWER", "CHIHIRO", "BIRDS OF A FEATHER"]
             }},
             { name: "Mon Laferte", img: "imagenes/m.jpeg", featuredImg: "imagenes/m.jpeg", albumImages: {"La Trenza": "imagenes/la.jpg", "Mon Laferte (Vol.1)": "imagenes/vo.jpg"}, albums: {
-                "La Trenza": ["La Trenza", "Mi Buen Amor", "Pa Donde Se Fue"],
+                "La Trenza": ["La Trenza", "Mi Buen Amor", "Pa Dónde Se Fue"],
                 "Mon Laferte (Vol.1)": ["Amor Completo", "Tu Falta De Querer", "Si Tu Me Quisieras"]
             }}
         ]
@@ -32,7 +32,7 @@ const musicDB = {
         artists: [
             { name: "Ed Maverick", img: "imagenes/ed.jpg", albumImages: {"Mix pa Llorar en tu Cuarto": "imagenes/me.jpg", "La Nube en el Jardin": "imagenes/eb.jpg"}, albums: {
                 "Mix pa Llorar en tu Cuarto": ["Fuentes de Ortiz", "Acurrucar", "Quiero"],
-                "La Nube en el Jardin": ["No Hay Problema", "Valor de Mas", "Violento"]
+                "La Nube en el Jardin": ["No Hay Problema", "Valor de Más", "Violento"]
             }},
             { name: "Kevin Kaarl", img: "imagenes/k.jpg", albumImages: {"Hasta el Fin del Mundo": "imagenes/kb.jpg", "Paris Texas": "imagenes/pk.jpg"}, albums: {
                 "Hasta el Fin del Mundo": ["Vámonos a Marte", "Colapso", "San Lucas"],
@@ -57,11 +57,11 @@ const musicDB = {
         name: "Baladas", desc: "Romanticismo atemporal y nostalgia pura", symbol: "🌹",
         artists: [
             { name: "José José", img: "imagenes/jose.jpg", albumImages: {"Distancia": "imagenes/d.jpg", "Lo Pasado Pasado": "imagenes/jsb.jpg"}, albums: {
-                "Distancia": ["Cariño", "Como duele", "Amar sin ser amado"],
-                "Lo Pasado Pasado": ["El ultimo beso", "Ahora no", "Almohada"]
+                "Distancia": ["Cariño", "Cómo duele", "Amar sin ser amado"],
+                "Lo Pasado Pasado": ["El último beso", "Ahora no", "Almohada"]
             }},
             { name: "Juan Gabriel", img: "imagenes/j.jpg", albumImages: {"Recuerdos": "imagenes/ru.jpg"}, albums: {
-                "Recuerdos": ["Recuerdos", "Yo No Naci Para Amar", "El Noa Noa"],
+                "Recuerdos": ["Recuerdos", "Yo No Nací Para Amar", "El Noa Noa"],
             }}
         ]
     }
