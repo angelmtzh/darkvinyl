@@ -985,3 +985,18 @@ document.addEventListener("DOMContentLoaded", () => {
         showSection(section);
     }
 });
+// DETENER TODOS LOS VÍDEOS AL CAMBIAR DE SECCIÓN
+document.addEventListener("click", function(event) {
+
+    const enlace = event.target.closest(
+        "a, button, [data-section], .menu-item, .nav-link"
+    );
+
+    if (!enlace) return;
+
+    document.querySelectorAll("video").forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+    });
+
+});
