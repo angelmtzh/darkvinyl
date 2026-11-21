@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARK VINYL</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- BARRA SUPERIOR -->
+        <header class="top-nav">
+            <button class="menu-trigger" type="button" onclick="toggleSidebar()" aria-label="Abrir o cerrar menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="brand-title">DARK VINYL</div>
+        </header>
+
+        <div class="main-layout">
+            <!-- MENÚ LATERAL DESPLEGABLE -->
+            <nav id="sidebar" class="sidebar closed" aria-label="Menú principal">
+                <div class="sidebar-header">
+                    <div class="sidebar-logo-container">
+                        <img src="imagenes/logo.jpg" class="sidebar-brand-logo" alt="LH VINYL Logo">
+                    </div>
+                </div>
+
+                <ul class="nav-menu-list">
+                    <li class="nav-item" onclick="showSection('inicio'); toggleSidebar();">
+                        <span class="nav-icon">⌂</span> Inicio
+                    </li>
+                    <li class="nav-item" onclick="showSection('explorar'); toggleSidebar();">
+                        <span class="nav-icon">⚲</span> Descubrir Música
+                    </li>
+                    <li class="nav-item" onclick="showSection('vivo'); toggleSidebar();">
+                        <span class="nav-icon">◉</span> Sesión en Vivo
+                    </li>
+                    <li class="nav-item" onclick="showSection('videos'); toggleSidebar();">
+                        <span class="nav-icon">▶</span> Videos Musicales
+                    </li>
+                    <li class="nav-item" onclick="showSection('creditos'); toggleSidebar();">
+                        <span class="nav-icon">ℹ</span> Créditos
+                    </li>
+                    <li class="nav-item"
+                        onclick="window.location.href='formulario.html';"><span class="nav-icon">✉</span> Suscribirse</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <main class="content-viewport">
+                <!-- SECCIÓN INICIO -->
+                <section id="sec-inicio" class="section-view active-view">
+                    <div class="hero-banner">
+                        <div class="hero-info">
+                            <span class="hero-tag">Colecciónes Completas</span>
+                            <h1>Toda tu musica en un mismo lugar solo con Dark Vinyl</h1>
+                        </div>
+                        <div class="tocadiscos-box">
+                            <div class="tocadiscos-base">
+                                <div class="vinilo-plate">
+                                    <div class="vinilo-grooves"></div>
+                                    <div class="vinilo-center-label"></div>
+                                </div>
+                                <div class="aguja-metalica"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-block">
+                        <h2>Artistas Destacados</h2>
+                        <div class="cards-grid" id="home-artists-grid">
+                            <div class="universal-card" onclick="openArtistAlbums('Billie Eilish')">
+                                <div class="card-img-placeholder"></div>
+                                <img src="imagenes/billie.jpg" alt="Billie Eilish" class="imagen-circular-interna">
+                                <div class="card-info-box"><h3>Billie Eilish<class="sidebar-brand-logo"></h3><p>Pop</p></div>
+                            </div>
+                            <div class="universal-card" onclick="openArtistAlbums('Arctic Monkeys')">
+                                <div class="card-img-placeholder"></div>
+                                <div class="card-info-box"><h3>Arctic Monkeys</h3><p>Rock</p></div>
+                            </div>
+                            <div class="universal-card" onclick="openArtistAlbums('Ed Maverick')">
+                                <div class="card-img-placeholder"></div>
+                                <div class="card-info-box"><h3>Ed Maverick</h3><p>Folk</p></div>
+                            </div>
+                            <div class="universal-card" onclick="openArtistAlbums('Joan Sebastian')">
+                                <div class="card-img-placeholder"></div>
+                                <div class="card-info-box"><h3>Joan Sebastian</h3><p>Regional</p></div>
+                            </div>
+                            
+                            <div class="universal-card" onclick="openArtistAlbums('José José')">
+                                <div class="card-img-placeholder"></div>
+                                <div class="card-info-box"><h3>José José</h3><p>Beladas</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-block">
+                        <h2>Videos</h2>
+                        <center> <video width="320" height="240" controls>
+  <source src="videos/fuentesll.mp4" type="video/mp4">
+ 
+</video> <video width="320" height="240" controls>
+  <source src="videos/sanlucas.mp4" type="video/mp4">
+  
+</video></center>
+
+                </section>
+
+                <!-- SECCIÓN EXPLORAR -->
+                <section id="sec-explorar" class="section-view">
+                    <div class="explore-header">
+                        <h1>Explorar</h1>
+                        <div class="search-box-wrapper">
+                            <span class="search-ico">⚲</span>
+                            <input
+                                type="text"
+                                id="main-search"
+                                placeholder="Busca géneros, artistas o álbumes..."
+                                oninput="handleSearch(this.value)"
+                                aria-label="Buscar géneros, artistas, álbumes o canciones"
+                            >
+                        </div>
+                    </div>
+
+                    <div id="explore-main-content">
+                        <div class="section-block">
+                            <h2>Géneros Musicales</h2>
+                            <div class="genres-grid-box" id="genres-container">
+                                <div class="genre-box-card" onclick="openGenre('pop')">
+                                    <div class="genre-card-img"><span>⚡</span></div>
+                                    <div class="genre-card-body"><h3>Pop</h3><p>Melodías modernas y producción estelar — <strong>Billie Eilish</strong></p></div>
+                                </div>
+                                <div class="genre-box-card" onclick="openGenre('rock')">
+                                    <div class="genre-card-img"><span>🎸</span></div>
+                                    <div class="genre-card-body"><h3>Rock</h3><p>Guerreros del riff y energía eléctrica — <strong>Arctic Monkeys</strong></p></div>
+                                </div>
+                                <div class="genre-box-card" onclick="openGenre('folk')">
+                                    <div class="genre-card-img"><span>🌾</span></div>
+                                    <div class="genre-card-body"><h3>Folk</h3><p>Acústica pura y relatos bohemios — <strong>Ed Maverick</strong></p></div>
+                                </div>
+                                <div class="genre-box-card" onclick="openGenre('regional')">
+                                    <div class="genre-card-img"><span>🪗</span></div>
+                                    <div class="genre-card-body"><h3>Regional</h3><p>Tradición, cuerdas y sentimiento profundo — <strong>Junior H</strong></p></div>
+                                </div>
+                               
+                                <div class="genre-box-card" onclick="openGenre('baladas')">
+                                    <div class="genre-card-img"><span>🌹</span></div>
+                                    <div class="genre-card-body"><h3>Bolero</h3><p>Romanticismo atemporal y nostalgia pura — <strong>José José</strong></p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="no-results-msg" class="no-results-box hidden">
+                        <p>No se encontraron resultados para esta búsqueda.</p>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN PARA CONTENIDO DINÁMICO -->
+                <section id="sec-dynamic" class="section-view">
+                    <div id="dynamic-content">
+                        <div class="detail-header-hero" style="margin-bottom:30px;">
+                            <div class="detail-titles">
+                                <h1>Álbum: El Triste y Sus Éxitos</h1>
+                                <p>Artista: José José</p>
+                            </div>
+                        </div>
+                        <div class="section-block">
+                            <h2>Canciones</h2>
+                            <div class="tracks-rows">
+                                <div class="row-item-track" onclick="playSong('bolero', 'El Triste y Sus Éxitos', 0)">
+                                    <div class="row-index">1</div>
+                                    <div class="row-thumb"></div>
+                                    <div class="row-details"><h4>Triste</h4><p>José José — El Triste y Sus Éxitos</p></div>
+                                    <span class="row-length">3:45</span>
+                                    <div class="row-action-icon">▶</div>
+                                </div>
+                                <div class="row-item-track" onclick="playSong('bolero', 'El Triste y Sus Éxitos', 1)">
+                                    <div class="row-index">2</div>
+                                    <div class="row-thumb"></div>
+                                    <div class="row-details"><h4>Lo Que No Fue No Será</h4><p>José José — El Triste y Sus Éxitos</p></div>
+                                    <span class="row-length">3:45</span>
+                                    <div class="row-action-icon">▶</div>
+                                </div>
+                                <div class="row-item-track" onclick="playSong('bolero', 'El Triste y Sus Éxitos', 2)">
+                                    <div class="row-index">3</div>
+                                    <div class="row-thumb"></div>
+                                    <div class="row-details"><h4>Almohada</h4><p>José José — El Triste y Sus Éxitos</p></div>
+                                    <span class="row-length">3:45</span>
+                                    <div class="row-action-icon">▶</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN MÚSICA EN VIVO -->
+             <center>   <section id="sec-vivo" class="section-view">
+                    <div class="section-block">
+                        <h1>Sesión en Vivo</h1>
+                       <center> <video width="320" height="240" controls>
+  <source src="videos/sl.mp4" type="video/mp4">
+  
+</video></center>
+                       <center> <video width="320" height="240" controls>
+  <source src="videos/edvivo.mp4" type="video/mp4">
+  
+</video></center>
+                </section></center>
+
+                <!-- SECCIÓN VIDEOS MUSICALES -->
+                <section id="sec-videos" class="section-view">
+                    <div class="section-block">
+                       <center> <h1>Videos Musicales</h1></center>
+                         <center> <video width="320" height="240" controls>
+  <source src="videos/slll.mp4" type="video/mp4">
+ 
+</video></center>
+  <center> <video width="320" height="240" controls>
+  <source src="videos/jose.mp4" type="video/mp4">
+  
+</video></center>
+                </section>
+
+                <!-- SECCIÓN CRÉDITOS -->
+                <section id="sec-creditos" class="section-view">
+                    <div class="credits-card-wrapper">
+                        <h1>Créditos del Proyecto</h1>
+                        <div class="credits-split-box">
+                            <div class="credits-col-left">
+                                <p><strong>Plataforma:</strong> @ 2026 - Dark Vinyl</p>
+                                <p><strong>Desarrollado por:</strong> Leonardo David Hernández Salazar</p>
+                            </div>
+                            <div class="marco-circular-premium">
+                                <img src="imagenes/logo.jpg" class="imagen-circular-interna" alt="Diseño Circular">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- REPRODUCTOR FLOTANTE -->
+        <div id="player-bar" class="player-bar hidden">
+            <div class="dock-left">
+                <div class="dock-mini-disc"></div>
+                <div class="dock-track-details">
+                    <h4 id="player-title">Triste</h4>
+                    <p id="player-artist">José José</p>
+                </div>
+            </div>
+            <div class="dock-center">
+                <div class="dock-controls">
+                    <button type="button" onclick="changeTrack(-1)" aria-label="Canción anterior">⏮</button>
+                    <button type="button" class="dock-play-btn" onclick="togglePlay()" id="play-btn" aria-label="Reproducir">▶</button>
+                    <button type="button" onclick="changeTrack(1)" aria-label="Siguiente canción">⏭</button>
+                </div>
+                <div class="dock-progress-wrapper">
+                    <span id="time-current">0:00</span>
+                    <div class="dock-bar-track" onclick="seekAudio(event)" role="progressbar" aria-label="Progreso de reproducción">
+                        <div id="progress-fill" class="dock-bar-fill" style="width: 0%;"></div>
+                    </div>
+                    <span id="time-total">0:00</span>
+                </div>
+            </div>
+            <div class="dock-right">
+                <button type="button" class="close-player" onclick="closePlayer()" aria-label="Cerrar reproductor">✕</button>
+            </div>
+        </div>
+
+        <!-- MODAL MULTIMEDIA -->
+        <div id="media-modal" class="custom-modal-overlay hidden" onclick="closeModalWindow()">
+            <div class="custom-modal-box" onclick="event.stopPropagation()">
+                <button type="button" class="modal-exit-btn" onclick="closeModalWindow()" aria-label="Cerrar ventana">✕</button>
+                <div id="modal-inner-content"></div>
+            </div>
+        </div>
+
+        <!-- REPRODUCTOR DE AUDIO REAL -->
+        <audio id="audio" preload="metadata"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
